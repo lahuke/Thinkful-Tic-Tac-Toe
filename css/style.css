@@ -38,7 +38,6 @@ h1{
 }
 
 #game > li:hover {
-	
 	border: 1px solid #dfdfdf;
 	transition: 0.2s;
 }
