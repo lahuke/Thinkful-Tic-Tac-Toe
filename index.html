@@ -11,23 +11,23 @@
 		<h1 class='header'>Tic Tac Toe</h1>
 <ul id="game">
                 <!-- first row -->
-                <li data-pos="0,0"></li>
-                <li data-pos="0,1"></li>
-                <li data-pos="0,2"></li>
+                <li id="one"></li>
+                <li id="two"></li>
+                <li id="three"></li>
                 <!-- second row -->
-                <li data-pos="1,0"></li>
-                <li data-pos="1,1"></li>
-                <li data-pos="1,2"></li>
+                <li id="four"></li>
+                <li id="five"></li>
+                <li id="six"></li>
                 <!-- third row -->
-                <li data-pos="2,0"></li>
-                <li data-pos="2,1"></li> 
-                <li data-pos="2,2"></li>
+                <li id="seven"></li>
+                <li id="eight"></li> 
+                <li id="nine"></li>
             </ul>
 </div>
 <div class="button">
 	<br>
-	<button class="resetButton" type="button" onClick="location.reload();">New Game</button>
+	<button class="resetButton" type="button" onClick="newGame();">New Game</button>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="js/app.js"></script>
+	<script src="js/other.js"></script>
 </body>
 </html>
