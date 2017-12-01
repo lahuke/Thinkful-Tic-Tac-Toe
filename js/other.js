@@ -74,7 +74,7 @@ function checkForWin(){
 		$('#three').hasClass(x) &&
 		$('#five').hasClass(x) &&
 		$('#seven').hasClass(x)){
-			alert("'X' has won!")
+			popUpX();
 			count = 0
 			newGame();
 		}
@@ -82,9 +82,13 @@ function checkForWin(){
 
 	}	
 	}
+function popUpX(){
+	$('#game').hide();
+	$('.popUp').show();
+	$('.resetButton').hide();
+	$('.xWinner').show();
+}
 
 function newGame(){
 	$('#game li').text('').removeClass()
-	$('#game li').text('').removeClass()
-	console.log(count)
 	}
