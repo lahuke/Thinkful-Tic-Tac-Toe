@@ -59,6 +59,11 @@ text-transform: none;
     border-radius: 12px;
 }
 
+.newGameButton{
+    background-color: #004c4c;
+    color: white;
+}
+
 button{
 	border-radius: 12px;
 	padding: 1em;
