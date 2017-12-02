@@ -1,7 +1,10 @@
+
+//variables
 var x = "x"
 var o = "o"
 count = 0
 
+//game play
 function playGame(){
 $('#game li').click(function(){
 	if ($(this).hasClass(x)|| $(this).hasClass(o)){
@@ -12,15 +15,18 @@ $('#game li').click(function(){
 		count++
 	$(this).text(o).addClass(o)
 	checkForWin();
+	console.log(count)
 }
 else { 
 	$(this).text(x).addClass(x)
 	count ++
 	checkForWin();
+	console.log(count)
 }})
 }
 playGame();
 
+//Checks to see if there are three in a row.
 function checkForWin(){
 	if ($('#one').hasClass(o) &&
 		$('#two').hasClass(o) &&
@@ -46,9 +52,8 @@ function checkForWin(){
 		$('#three').hasClass(o) &&
 		$('#five').hasClass(o) &&
 		$('#seven').hasClass(o)){
-			alert("'O' has won!")
-			count = 0
-			newGame();
+			popUpO();
+			//count = 0
 		}
 	else if ($('#one').hasClass(x) &&
 		$('#two').hasClass(x) &&
@@ -75,13 +80,15 @@ function checkForWin(){
 		$('#five').hasClass(x) &&
 		$('#seven').hasClass(x)){
 			popUpX();
-			count = 0
-			newGame();
 		}
-	else {
-
-	}	
+	else if (count==9){
+		popUpNoWinner();
 	}
+	else {
+}
+}	
+	
+//X is the winner, congratulations! pop up 	
 function popUpX(){
 	$('#game').hide();
 	$('.popUp').show();
@@ -89,6 +96,29 @@ function popUpX(){
 	$('.xWinner').show();
 }
 
+//) is the winner, congratulations! pop up 	
+function popUpO(){
+	$('#game').hide();
+	$('.popUp').show();
+	$('.resetButton').hide();
+	$('.oWinner').show();
+}
+
+function popUpNoWinner(){
+	$('#game').hide();
+	$('.popUp').show();
+	$('.resetButton').hide();
+	$('.noWinner').show();
+}
+
+//starts a new game
 function newGame(){
-	$('#game li').text('').removeClass()
+	$('#game li').text('').removeClass();
+	$('#game').show();
+	$('.popUp').hide();
+	$('.oWinner').hide();
+	$('.xWinner').hide();
+	$('.noWinner').hide();
+	$('.resetButton').show();
+	count=0
 	}
